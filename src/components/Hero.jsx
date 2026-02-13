@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaGlobe } from "react-icons/fa";
 import "../styles/Hero.css";
+import Resume from "../assets/Kabilan_Resume.pdf";
 
 const Hero = () => {
     const [text, setText] = useState("");
@@ -120,7 +121,7 @@ const Hero = () => {
                 </div>
 
                 <motion.a
-                    href="/resume.pdf" // Placeholder
+                    href={Resume}
                     download={true}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

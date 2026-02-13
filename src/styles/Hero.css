@@ -61,8 +61,8 @@
     justify-content: center;
     padding: 1rem;
     border-radius: 12px;
-    width: 90px;
-    height: 90px;
+    width: 110px;
+    height: 110px;
     text-decoration: none;
     color: var(--text-color);
     background: rgba(255, 255, 255, 0.03);
@@ -190,5 +190,22 @@
 
     .hero-role {
         font-size: 1.5rem;
+    }
+
+    .social-card {
+        width: 80px;
+        /* Increased from 70px */
+        height: 80px;
+        /* Increased from 70px */
+    }
+
+    .social-icon {
+        font-size: 1.5rem;
+        /* Reduced to match Tech Stack */
+    }
+
+    .social-name {
+        font-size: 0.65rem;
+        /* Added for consistency */
     }
 }
