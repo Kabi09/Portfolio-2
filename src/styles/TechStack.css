@@ -116,17 +116,15 @@
     align-items: center;
     justify-content: center;
     padding: 0;
-    /* Padding handled by size or inner? */
     border-radius: 12px;
     cursor: pointer;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
-    width: 110px;
-    /* Increased to match Hero profile links */
-    height: 110px;
-    /* Increased to match Hero profile links */
-    /* gap removed here, present in wrapper */
+    width: 130px;
+    /* Increased to 130px */
+    height: 130px;
+    /* Increased to 130px */
     display: grid;
     place-items: center;
     position: relative;
@@ -140,8 +138,8 @@
 }
 
 .tech-icon {
-    font-size: 1.8rem;
-    /* Matched to Hero social-icon */
+    font-size: 2.2rem;
+    /* Increased for larger box */
     color: var(--text-color);
     transition: color 0.3s ease;
     display: flex;
@@ -152,13 +150,8 @@
 
 .tech-name {
     font-size: 0.8rem;
-    /* Matched to Hero social-name */
     font-weight: 500;
 }
-
-/* Specific colors for icons can be handled if needed, 
-   but user asked for style like image (mostly branding colors or uniform).
-   Keeping it simple/uniform first. */
 
 .tech-item:hover .tech-icon {
     color: #fff;
@@ -171,19 +164,19 @@
     }
 
     .tech-item {
-        width: 80px;
-        /* Increased from 70px */
-        height: 80px;
-        /* Increased from 70px */
+        width: 100px;
+        /* Increased to 100px */
+        height: 100px;
+        /* Increased to 100px */
     }
 
     .tech-icon {
-        font-size: 1.5rem;
-        /* Reduced to fit text */
+        font-size: 2rem;
+        /* Increased for mobile */
     }
 
     .tech-name {
-        font-size: 0.65rem;
-        /* Adjusted for mobile */
+        font-size: 0.8rem;
+        /* Increased slightly */
     }
 }

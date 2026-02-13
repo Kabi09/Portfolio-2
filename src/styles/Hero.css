@@ -61,8 +61,8 @@
     justify-content: center;
     padding: 1rem;
     border-radius: 12px;
-    width: 110px;
-    height: 110px;
+    width: 130px;
+    height: 130px;
     text-decoration: none;
     color: var(--text-color);
     background: rgba(255, 255, 255, 0.03);
@@ -102,7 +102,7 @@
 }
 
 .social-icon {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     color: var(--text-color);
     transition: color 0.3s;
     display: flex;
@@ -193,19 +193,15 @@
     }
 
     .social-card {
-        width: 80px;
-        /* Increased from 70px */
-        height: 80px;
-        /* Increased from 70px */
+        width: 100px;
+        height: 100px;
     }
 
     .social-icon {
-        font-size: 1.5rem;
-        /* Reduced to match Tech Stack */
+        font-size: 2rem;
     }
 
     .social-name {
-        font-size: 0.65rem;
-        /* Added for consistency */
+        font-size: 0.8rem;
     }
 }
