@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 import { FaGithub, FaLinkedin, FaEnvelope, FaGlobe } from "react-icons/fa";
 import "../styles/Hero.css";
 import Resume from "../assets/Kabilan_Resume.pdf";
@@ -130,14 +131,15 @@ const Hero = () => {
                     >
                         Download CV
                     </motion.a>
-                    <motion.a
-                        href="#contact"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                    <Link
+                        to="contact"
+                        smooth={true}
+                        duration={500}
+                        offset={-80} // Offset for navbar
                         className="btn btn-outline"
                     >
                         Send Message
-                    </motion.a>
+                    </Link>
                 </div>
             </div>
         </section>
