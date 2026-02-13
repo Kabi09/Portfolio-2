@@ -136,11 +136,41 @@
     letter-spacing: 1px;
 }
 
+/* Hero Buttons Container */
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
 .btn-primary {
     background: linear-gradient(to right, var(--accent-color), #2563eb);
     color: #fff;
     border: none;
     box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+    width: 200px;
+    /* Fixed width for consistency */
+    display: flex;
+    /* Flex to center text if needed */
+    justify-content: center;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.1);
+    width: 200px;
+    /* Match width of primary button */
+    display: flex;
+    justify-content: center;
+}
+
+.btn-outline:hover {
+    background: rgba(56, 189, 248, 0.1);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
 }
 
 .scroll-down {

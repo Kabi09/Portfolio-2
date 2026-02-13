@@ -120,15 +120,25 @@ const Hero = () => {
                     ))}
                 </div>
 
-                <motion.a
-                    href={Resume}
-                    download={true}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="btn btn-primary"
-                >
-                    Download CV
-                </motion.a>
+                <div className="hero-buttons">
+                    <motion.a
+                        href={Resume}
+                        download={true}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="btn btn-primary"
+                    >
+                        Download CV
+                    </motion.a>
+                    <motion.a
+                        href="#contact"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="btn btn-outline"
+                    >
+                        Send Message
+                    </motion.a>
+                </div>
             </div>
         </section>
     );
