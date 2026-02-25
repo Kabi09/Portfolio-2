@@ -35,6 +35,14 @@ const projectsData = [
         github: "https://github.com/StartLord-09", // Placeholder
         demo: "#", // No link in resume
     },
+    {
+        id: 5,
+        title: "Dynamic QR Code Generator",
+        desc: "MERN stack application that generates permanent QR codes with dynamic redirect links. Users can update destination URLs anytime without changing the QR image.",
+        techs: ["React.js", "Node.js", "Express.js", "MongoDB", "Mongoose"],
+        github: "https://github.com/Kabi09/Dynamic-QR",
+        demo: "https://dynamic-qr-zeta.vercel.app/"
+    },
 ];
 
 const ProjectCard = ({ project, index }) => {
