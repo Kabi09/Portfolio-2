@@ -12,7 +12,7 @@ export default async function handler(req, res) {
         });
 
         const options = {
-            amount: 1000, // ₹10 in paise
+            amount: 200, // ₹2 in paise
             currency: "INR",
             receipt: `receipt_${Date.now()}`,
         };

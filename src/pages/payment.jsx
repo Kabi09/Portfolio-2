@@ -41,7 +41,7 @@ const PaymentPage = () => {
                 amount: data.amount,
                 currency: data.currency,
                 name: "Kabilan K",
-                description: "Payment of ₹10",
+                description: "Payment of ₹2",
                 order_id: data.orderId,
                 handler: function (response) {
                     setPaymentStatus("success");
@@ -113,7 +113,7 @@ const PaymentPage = () => {
                         WebkitTextFillColor: "transparent",
                         margin: "1.5rem 0",
                     }}>
-                        ₹10.00
+                        ₹2.00
                     </div>
 
                     <p style={{ color: "var(--secondary-color)", marginBottom: "2rem", fontSize: "0.95rem" }}>
@@ -195,7 +195,7 @@ const PaymentPage = () => {
                             e.target.style.transform = "translateY(0)";
                         }}
                     >
-                        {loading ? "Processing..." : <><FaLock /> Pay ₹10.00</>}
+                        {loading ? "Processing..." : <><FaLock /> Pay ₹2.00</>}
                     </button>
 
                     {/* Security Badge */}

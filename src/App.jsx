@@ -10,7 +10,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import RefundPolicy from "./pages/RefundPolicy";
 import ContactPage from "./pages/ContactPage";
-import PaymentPage from "./pages/PaymentPage";
+import PaymentPage from "./pages/payment";
 
 function HomePage() {
   return (
