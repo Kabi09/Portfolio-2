@@ -10,6 +10,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import RefundPolicy from "./pages/RefundPolicy";
 import ContactPage from "./pages/ContactPage";
+import PaymentPage from "./pages/PaymentPage";
 
 function HomePage() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <Route path="/terms" element={<Terms />} />
       <Route path="/refund-policy" element={<RefundPolicy />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/payment" element={<PaymentPage />} />
     </Routes>
   );
 }
