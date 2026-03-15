@@ -22,7 +22,7 @@ const Contact = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="contact-subtitle"
             >
-               If you have an opportunity, project idea, or any questions, I’d be happy to connect with you.            </motion.p>
+                If you have an opportunity, project idea, or any questions, I’d be happy to connect with you.            </motion.p>
 
             <div className="contact-container">
                 {/* Contact Info */}
@@ -107,10 +107,10 @@ const Contact = () => {
                     )}
 
                     <div className="input-group">
-                        <input type="text" name="name" placeholder="Your Name" required />
+                        <input type="text" name="name" placeholder="Your Name *" required />
                     </div>
                     <div className="input-group">
-                        <input type="email" name="email" placeholder="Your Email" required />
+                        <input type="email" name="email" placeholder="Your Email *" required />
                     </div>
                     <div className="input-group">
                         <input type="tel" name="phone" placeholder="Phone Number (Optional)" />
