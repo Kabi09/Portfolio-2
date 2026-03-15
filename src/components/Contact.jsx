@@ -118,7 +118,7 @@ const Contact = () => {
                     <div className="input-group">
                         <textarea
                             name="message"
-                            placeholder="Your Message"
+                            placeholder="Your Message *"
                             rows="5"
                             required
                         ></textarea>
