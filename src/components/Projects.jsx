@@ -5,45 +5,44 @@ import "../styles/Projects.css";
 const projectsData = [
     {
         id: 1,
-        title: "Dude Quizz AI",
+        title: "🧠 Dude Quizz AI 📚",
         desc: "An AI-powered quiz platform focused on one-mark questions for Tamil medium students (Class 10, 11, 12). Features mathematical formula rendering using KaTeX.",
         techs: ["MERN Stack", "Ollama AI", "KaTeX", "Vercel"],
-        github: "https://github.com/Kabi09/Dude-Quizz-AI", // Placeholder
+        github: "https://github.com/Kabi09/Dude-Quizz-AI",
         demo: "https://dude-quiz.vercel.app/",
     },
     {
         id: 2,
-        title: "E-Commerce Website",
+        title: "🛒💳 E-Commerce Website",
         desc: "Secure e-commerce application with Razorpay payment gateway, user authentication, and email notifications using Nodemailer for order confirmations and updates.",
         techs: ["MERN Stack", "Razorpay", "Nodemailer"],
-        github: "https://github.com/Kabi09/InstaShop-Ecommerce", // Placeholder
-        demo: "https://insta-shop-umber.vercel.app/", // No link in resume
+        github: "https://github.com/Kabi09/InstaShop-Ecommerce",
+        demo: "https://insta-shop-umber.vercel.app/",
     },
     {
         id: 3,
-        title: "Billing Software",
-        desc: "Role-Based Billing & Inventory System. Handles workers, products, reports, GST invoice generation, barcode scanning, and thermal printer integration.",
-        techs: ["React.js", "Node.js", "MongoDB", "JWT"],
-        github: "https://github.com/Kabi09/Billing_Software", // Placeholder
-        demo: "https://billing-kabi09.vercel.app/",
+        title: "KabiGPT 🤖✨",
+        desc: "A personalized Tanglish AI Telegram bot powered by Ollama. It features a custom personality, provides natural, friendly responses in a mix of Tamil and English.",
+        techs: ["Node.js", "Express.js", "MongoDB", "Telegram API", "Ollama Cloud"],
+        github: "https://github.com/Kabi09/Telegram-Bot",
+        demo: "https://t.me/Dude09_bot",
     },
-     {
+    {
         id: 4,
-        title: "Dynamic QR Code Generator",
+        title: "🔗📱 Dynamic QR Code Generator",
         desc: "MERN stack application that generates permanent QR codes with dynamic redirect links. Users can update destination URLs anytime without changing the QR image.",
         techs: ["React.js", "Node.js", "Express.js", "MongoDB", "Mongoose"],
         github: "https://github.com/Kabi09/Dynamic-QR",
         demo: "https://dynamic-qr-zeta.vercel.app/"
     },
-   {
-    id: 5,
-    title: "KabiGPT 🤖✨",
-    desc: "A personalized Tanglish AI Telegram bot powered by Ollama. It features a custom personality, maintains chat history using MongoDB, and provides natural, friendly responses in a mix of Tamil and English.",
-    techs: ["Node.js", "Express.js", "MongoDB", "Telegram API", "Ollama Cloud"],
-    github: "https://github.com/Kabi09/Telegram-Bot",
-    demo: "https://t.me/Dude09_bot",
-},
-    
+    {
+        id: 5,
+        title: "🧾📊 Billing Software",
+        desc: "Role-Based Billing & Inventory System. Handles workers, products, reports, GST invoice generation, barcode scanning, and thermal printer integration.",
+        techs: ["React.js", "Node.js", "MongoDB", "JWT"],
+        github: "https://github.com/Kabi09/Billing_Software",
+        demo: "https://billing-kabi09.vercel.app/",
+    },
 ];
 
 const ProjectCard = ({ project, index }) => {
