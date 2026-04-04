@@ -51,10 +51,20 @@ const Chatbot = () => {
             });
 
             if (res.data && res.data.message) {
-                setMessages(prev => [...prev, { role: "ai", content: res.data.message.content }]);
+                const aiContent = res.data.message.content;
+                setMessages(prev => [...prev, { role: "ai", content: aiContent }]);
+                
+                // Auto-open contact form if AI suggests it
+                if (aiContent.toLowerCase().includes("contact kabilan") || aiContent.toLowerCase().includes("contact form")) {
+                    setTimeout(() => setMode("contact"), 2000);
+                }
             } else if (res.data && res.data.choices) {
-                // Fallback for different API response formats
-                setMessages(prev => [...prev, { role: "ai", content: res.data.choices[0].message.content }]);
+                const aiContent = res.data.choices[0].message.content;
+                setMessages(prev => [...prev, { role: "ai", content: aiContent }]);
+
+                if (aiContent.toLowerCase().includes("contact kabilan") || aiContent.toLowerCase().includes("contact form")) {
+                    setTimeout(() => setMode("contact"), 2000);
+                }
             }
         } catch (error) {
             console.error(error);

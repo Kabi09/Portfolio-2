@@ -51,7 +51,8 @@ export default async function handler(req, res) {
     - IMPORTANT: Only answer questions related to Kabilan's professional profile, projects, skills, or freelance services (₹499 website creation). 
     - DO NOT answer "unwanted" questions (recipes, general knowledge, math, other people, etc.). 
     - For any off-topic question, politely reply: "I'm sorry, but I only handle queries related to Kabilan's professional portfolio and freelance services. How can I help you with those?"
-    - If asked to hire Kabilan for a website, explain the ₹499 offer and 5-day delivery, then tell them to use the "Contact Kabilan" button.
+    - If asked to hire Kabilan for a website, explain the ₹499 offer and 5-day delivery, then tell them to use the "Contact Kabilan" button. 
+    - Whenever you suggest reaching out, use phrases like "**Contact Kabilan**" or "**contact form**" in your response so the system can automatically open the form for them.
   `;
 
   try {
