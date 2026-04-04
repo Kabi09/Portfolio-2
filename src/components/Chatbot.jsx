@@ -104,7 +104,13 @@ const Chatbot = () => {
                         <div className="chatbot-messages">
                             {messages.map((msg, idx) => (
                                 <div key={idx} className={`message ${msg.role}`}>
-                                    {msg.content}
+                                    {msg.content.split(/(https?:\/\/[^\s]+)/g).map((part, i) => 
+                                        part.match(/^https?:\/\//) ? (
+                                            <a key={i} href={part} target="_blank" rel="noopener noreferrer" style={{color: '#38bdf8', textDecoration: 'underline'}}>
+                                                {part}
+                                            </a>
+                                        ) : part
+                                    )}
                                 </div>
                             ))}
                             
