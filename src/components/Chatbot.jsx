@@ -1,7 +1,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaPaperPlane, FaTimes, FaRobot, FaUser, FaProjectDiagram, FaCode, FaEnvelope, FaLink, FaChevronRight, FaTrash } from "react-icons/fa";
+import { FaPaperPlane, FaTimes, FaRobot, FaUser, FaProjectDiagram, FaCode, FaEnvelope, FaLink, FaChevronRight, FaTrash, FaRocket } from "react-icons/fa";
 import axios from "axios";
 import "../styles/Chatbot.css";
 
@@ -12,7 +12,7 @@ const Chatbot = () => {
     const [messages, setMessages] = useState(() => {
         const savedMessages = localStorage.getItem("kabi_chat_history");
         return savedMessages ? JSON.parse(savedMessages) : [
-            { role: "ai", content: "Hi! I'm KabiGPT, Kabilan's personal AI assistant. How can I help you today? I know about his projects, skills, and can even help you send him a message!" }
+            { role: "ai", content: "Hi! I'm KabiGPT, Kabilan's personal AI assistant. I can tell you about his projects, skills, or his **Website Creation freelance service (Starting ₹499)**! How can I help you today?" }
         ];
     });
     const [isLoading, setIsLoading] = useState(false);
@@ -25,7 +25,7 @@ const Chatbot = () => {
 
     const clearHistory = () => {
         if (window.confirm("Are you sure you want to clear your chat history?")) {
-            const initialMessage = [{ role: "ai", content: "Hi! I'm KabiGPT, Kabilan's personal AI assistant. How can I help you today? I know about his projects, skills, and can even help you send him a message!" }];
+            const initialMessage = [{ role: "ai", content: "Hi! I'm KabiGPT, Kabilan's personal AI assistant. I can tell you about his projects, skills, or his **Website Creation freelance service (Starting ₹499)**! How can I help you today?" }];
             setMessages(initialMessage);
             localStorage.setItem("kabi_chat_history", JSON.stringify(initialMessage));
         }
@@ -80,6 +80,21 @@ const Chatbot = () => {
     };
 
     const quickActions = [
+        { 
+            name: "Website Service", 
+            icon: <FaRocket />, 
+            action: () => setMessages(prev => [...prev, { 
+                role: "ai", 
+                content: `### 🌐 Freelance Website Services
+I can create a professional, responsive, and SEO-friendly website for you!
+
+💰 **Starting Price**: ₹499
+⏱️ **Delivery**: within 5 days
+🛠️ **Tech**: React, Node.js, Tailwind CSS
+
+Interested? Just ask me more details or click the **Contact Kabilan** button to get started!`
+            }]) 
+        },
         { 
             name: "Projects", 
             icon: <FaProjectDiagram />, 
