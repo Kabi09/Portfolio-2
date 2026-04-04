@@ -1,7 +1,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaPaperPlane, FaTimes, FaRobot, FaUser, FaProjectDiagram, FaCode, FaEnvelope, FaLink, FaChevronRight } from "react-icons/fa";
+import { FaPaperPlane, FaTimes, FaRobot, FaUser, FaProjectDiagram, FaCode, FaEnvelope, FaLink, FaChevronRight, FaTrash } from "react-icons/fa";
 import axios from "axios";
 import "../styles/Chatbot.css";
 
@@ -9,9 +9,12 @@ const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [mode, setMode] = useState("chat"); // chat, contact
     const [input, setInput] = useState("");
-    const [messages, setMessages] = useState([
-        { role: "ai", content: "Hi! I'm KabiGPT, Kabilan's personal AI assistant. How can I help you today? I know about his projects, skills, and can even help you send him a message!" }
-    ]);
+    const [messages, setMessages] = useState(() => {
+        const savedMessages = localStorage.getItem("kabi_chat_history");
+        return savedMessages ? JSON.parse(savedMessages) : [
+            { role: "ai", content: "Hi! I'm KabiGPT, Kabilan's personal AI assistant. How can I help you today? I know about his projects, skills, and can even help you send him a message!" }
+        ];
+    });
     const [isLoading, setIsLoading] = useState(false);
     const [contactForm, setContactForm] = useState({ name: "", email: "", phone: "", message: "" });
     const messagesEndRef = useRef(null);
@@ -20,7 +23,16 @@ const Chatbot = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     };
 
+    const clearHistory = () => {
+        if (window.confirm("Are you sure you want to clear your chat history?")) {
+            const initialMessage = [{ role: "ai", content: "Hi! I'm KabiGPT, Kabilan's personal AI assistant. How can I help you today? I know about his projects, skills, and can even help you send him a message!" }];
+            setMessages(initialMessage);
+            localStorage.setItem("kabi_chat_history", JSON.stringify(initialMessage));
+        }
+    };
+
     useEffect(() => {
+        localStorage.setItem("kabi_chat_history", JSON.stringify(messages));
         scrollToBottom();
     }, [messages, isLoading]);
 
@@ -113,15 +125,25 @@ Generate live-updateable QR codes with tracking.
                     >
                         <div className="chatbot-header">
                             <div className="chatbot-profile">
-                                <div className="chatbot-avatar"><FaRobot /></div>
+                                <div className="chatbot-avatar">
+                                    <FaRobot />
+                                    <span className="active-dot"></span>
+                                </div>
                                 <div className="chatbot-info">
                                     <h4>KabiGPT</h4>
                                     <p>AI Assistant • Active</p>
                                 </div>
                             </div>
-                            <button className="action-btn" style={{border: 'none'}} onClick={() => { setMode("chat"); setIsOpen(false); }}>
-                                <FaTimes />
-                            </button>
+                            <div style={{display: 'flex', gap: '10px'}}>
+                                {messages.length > 1 && (
+                                    <button className="action-btn" style={{border: 'none', background: 'transparent'}} title="Clear Chat" onClick={clearHistory}>
+                                        <FaTrash />
+                                    </button>
+                                )}
+                                <button className="action-btn" style={{border: 'none', background: 'transparent'}} onClick={() => { setMode("chat"); setIsOpen(false); }}>
+                                    <FaTimes />
+                                </button>
+                            </div>
                         </div>
 
                         <div className="chatbot-messages" style={{whiteSpace: 'pre-wrap'}}>
