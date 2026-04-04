@@ -36,6 +36,10 @@ export default async function handler(req, res) {
     - Email: kabilan.fullstack@gmail.com
     - Website: https://www.kabilankaliyaperumal.in/
     
+    Formatting:
+    - Use Markdown for links: [Link Text](URL).
+    - When asked for projects, present them in a structured list with emojis, bold titles, and a short description. Example: 🚀 **Project Name**...
+    
     Behavior: 
     - Be professional, friendly, and concise. 
     - Use a mix of English and Tamil (Tanglish) if appropriate, as Kabilan's background is Tamil.

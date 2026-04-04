@@ -68,7 +68,30 @@ const Chatbot = () => {
     };
 
     const quickActions = [
-        { name: "Projects", icon: <FaProjectDiagram />, action: () => setMessages(prev => [...prev, { role: "ai", content: "Kabilan has built some amazing projects like 'Dude Quizz AI', 'InstaShop', and 'KabiGPT'. Which one would you like to know about?" }]) },
+        { 
+            name: "Projects", 
+            icon: <FaProjectDiagram />, 
+            action: () => setMessages(prev => [...prev, { 
+                role: "ai", 
+                content: `Here are some of Kabilan's top projects:
+
+🚀 **Dude Quizz AI**
+An AI-powered quiz platform for Tamil medium students.
+🔗 [Demo](https://dude-quiz.vercel.app/) | [Code](https://github.com/Kabi09/Dude-Quizz-AI)
+
+🛒 **InstaShop E-Commerce**
+Secure shopping with Razorpay & Nodemailer integration.
+🔗 [Demo](https://insta-shop-umber.vercel.app/) | [Code](https://github.com/Kabi09/InstaShop-Ecommerce)
+
+🤖 **KabiGPT**
+Personalized Tanglish AI Telegram bot with a custom personality.
+🔗 [Demo](https://t.me/Dude09_bot) | [Code](https://github.com/Kabi09/Telegram-Bot)
+
+🔗 **Dynamic QR Generator**
+Generate live-updateable QR codes with tracking.
+🔗 [Demo](https://dynamic-qr-zeta.vercel.app/) | [Code](https://github.com/Kabi09/Dynamic-QR)`
+            }]) 
+        },
         { name: "Tech Stack", icon: <FaCode />, action: () => setMessages(prev => [...prev, { role: "ai", content: "He is proficient in the MERN stack (MongoDB, Express, React, Node.js), Python, and JavaScript. He also works with AI integrations!" }]) },
         { name: "Links", icon: <FaLink />, action: () => setMessages(prev => [...prev, { role: "ai", content: "You can find Kabilan on GitHub (https://github.com/Kabi09) and LinkedIn (https://linkedin.com/in/kabilan09)!" }]) },
         { name: "Contact Kabilan", icon: <FaEnvelope />, action: () => setMode("contact") },
@@ -101,16 +124,37 @@ const Chatbot = () => {
                             </button>
                         </div>
 
-                        <div className="chatbot-messages">
+                        <div className="chatbot-messages" style={{whiteSpace: 'pre-wrap'}}>
                             {messages.map((msg, idx) => (
                                 <div key={idx} className={`message ${msg.role}`}>
-                                    {msg.content.split(/(https?:\/\/[^\s]+)/g).map((part, i) => 
-                                        part.match(/^https?:\/\//) ? (
-                                            <a key={i} href={part} target="_blank" rel="noopener noreferrer" style={{color: '#38bdf8', textDecoration: 'underline'}}>
-                                                {part}
-                                            </a>
-                                        ) : part
-                                    )}
+                                    {msg.content.split(/(\[.*?\]\(https?:\/\/[^\s)]+\)|https?:\/\/[^\s!)]+)/g).map((part, i) => {
+                                        // Handle Markdown [Text](URL)
+                                        const mdMatch = part.match(/\[(.*?)\]\((https?:\/\/[^\s)]+)\)/);
+                                        if (mdMatch) {
+                                            return (
+                                                <a key={i} href={mdMatch[2]} target="_blank" rel="noopener noreferrer" style={{color: '#38bdf8', textDecoration: 'underline'}}>
+                                                    {mdMatch[1]}
+                                                </a>
+                                            );
+                                        }
+                                        
+                                        // Handle Raw URL
+                                        if (part.match(/^https?:\/\//)) {
+                                            // Clean URL if trailing punctuation exists
+                                            const cleanUrl = part.replace(/[!)]+$/, "");
+                                            const trailing = part.slice(cleanUrl.length);
+                                            return (
+                                                <span key={i}>
+                                                    <a href={cleanUrl} target="_blank" rel="noopener noreferrer" style={{color: '#38bdf8', textDecoration: 'underline'}}>
+                                                        {cleanUrl}
+                                                    </a>
+                                                    {trailing}
+                                                </span>
+                                            );
+                                        }
+                                        
+                                        return part;
+                                    })}
                                 </div>
                             ))}
                             
