@@ -104,8 +104,49 @@ Generate live-updateable QR codes with tracking.
 🔗 [Demo](https://dynamic-qr-zeta.vercel.app/) | [Code](https://github.com/Kabi09/Dynamic-QR)`
             }]) 
         },
-        { name: "Tech Stack", icon: <FaCode />, action: () => setMessages(prev => [...prev, { role: "ai", content: "He is proficient in the MERN stack (MongoDB, Express, React, Node.js), Python, and JavaScript. He also works with AI integrations!" }]) },
-        { name: "Links", icon: <FaLink />, action: () => setMessages(prev => [...prev, { role: "ai", content: "You can find Kabilan on GitHub (https://github.com/Kabi09) and LinkedIn (https://linkedin.com/in/kabilan09)!" }]) },
+        { 
+            name: "Tech Stack", 
+            icon: <FaCode />, 
+            action: () => setMessages(prev => [...prev, { 
+                role: "ai", 
+                content: `### 🔧 Front‑end
+- **HTML** & **CSS**
+- **React.js**
+- **Tailwind CSS**
+
+### 🛠️ Back‑end
+- **Node.js**
+- **Express.js**
+- **MongoDB**
+
+### 📦 Other Tools & Services
+- **Git** & **GitHub**
+- **RESTful APIs** (Postman for testing)  
+- **JWT** for authentication  
+- **KaTeX** (math rendering)  
+- **Razorpay** (payment gateway)  
+- **Nodemailer** (email service)  
+- **Ollama AI** (AI integration)  
+- **Vercel** (deployment)
+
+### 🗣️ Languages
+- **JavaScript** (ES6+)
+- **Python**
+
+Feel free to explore any of these in my projects or reach out if you’d like more details! 🚀`
+            }]) 
+        },
+        { 
+            name: "Links", 
+            icon: <FaLink />, 
+            action: () => setMessages(prev => [...prev, { 
+                role: "ai", 
+                content: `You can find Kabilan on:
+- **GitHub**: https://github.com/Kabi09
+- **LinkedIn**: https://linkedin.com/in/kabilan09
+- **Email**: mailto:kabilan.fullstack@gmail.com` 
+            }]) 
+        },
         { name: "Contact Kabilan", icon: <FaEnvelope />, action: () => setMode("contact") },
     ];
 
@@ -149,13 +190,23 @@ Generate live-updateable QR codes with tracking.
                         <div className="chatbot-messages" style={{whiteSpace: 'pre-wrap'}}>
                             {messages.map((msg, idx) => (
                                 <div key={idx} className={`message ${msg.role}`}>
-                                    {msg.content.split(/(\[.*?\]\(https?:\/\/[^\s)]+\)|https?:\/\/[^\s!)]+)/g).map((part, i) => {
+                                    {msg.content.split(/(\[.*?\]\(https?:\/\/[^\s)]+\)|https?:\/\/[^\s!)]+|mailto:[^\s)]+)/g).map((part, i) => {
                                         // Handle Markdown [Text](URL)
                                         const mdMatch = part.match(/\[(.*?)\]\((https?:\/\/[^\s)]+)\)/);
                                         if (mdMatch) {
                                             return (
                                                 <a key={i} href={mdMatch[2]} target="_blank" rel="noopener noreferrer" style={{color: '#38bdf8', textDecoration: 'underline'}}>
                                                     {mdMatch[1]}
+                                                </a>
+                                            );
+                                        }
+                                        
+                                        // Handle mailto:
+                                        if (part.startsWith("mailto:")) {
+                                            const email = part.replace("mailto:", "");
+                                            return (
+                                                <a key={i} href={part} style={{color: '#38bdf8', textDecoration: 'underline'}}>
+                                                    {email}
                                                 </a>
                                             );
                                         }

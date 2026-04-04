@@ -18,10 +18,10 @@ export default async function handler(req, res) {
     Built applications like AI-powered quiz platforms, billing systems, and e-commerce solutions.
     
     Tech Stack: 
-    - Frontend: HTML, CSS, React.js, Tailwind CSS
-    - Backend: Node.js, Express.js, MongoDB
-    - Other: Git, GitHub, RESTful API, Postman, JWT, KaTeX, Razorpay, Nodemailer, Ollama AI, Vercel
-    - Languages: Python, JavaScript
+    - Front-end: HTML & CSS, React.js, Tailwind CSS
+    - Back-end: Node.js, Express.js, MongoDB
+    - Other: Git & GitHub, RESTful APIs, JWT, KaTeX, Razorpay, Nodemailer, Ollama AI, Vercel
+    - Languages: JavaScript (ES6+), Python
     
     Projects:
     1. Dude Quizz AI: AI-powered quiz platform for Tamil medium students. (https://dude-quiz.vercel.app/)
