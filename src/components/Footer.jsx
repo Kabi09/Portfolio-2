@@ -9,7 +9,7 @@ const Footer = () => {
                 Designed & Built by <span className="highlight">Kabilan K</span>
             </p>
             <div className="footer-socials">
-                <a href="https://github.com/StartLord-09" target="_blank" rel="noreferrer">
+                <a href="https://github.com/Kabi09" target="_blank" rel="noreferrer">
                     <FaGithub />
                 </a>
                 <a href="https://linkedin.com/in/kabilan-k" target="_blank" rel="noreferrer">
