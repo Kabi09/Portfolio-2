@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaHeart, FaEnvelope } from "react-icons/fa";
+import { RiMoneyRupeeCircleFill } from "react-icons/ri";
 import "../styles/Footer.css";
 
 const Footer = () => {
@@ -17,6 +18,9 @@ const Footer = () => {
                 </a>
                 <a href="mailto:kabilan.fullstack@gmail.com" target="_blank" rel="noreferrer">
                     <FaEnvelope />
+                </a>
+              <a href="https://kabilan.in/payment" target="_blank" rel="noreferrer">
+                    <RiMoneyRupeeCircleFill />
                 </a>
             </div>
             <div className="footer-links">
