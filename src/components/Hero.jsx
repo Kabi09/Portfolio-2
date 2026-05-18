@@ -45,7 +45,7 @@ const Hero = () => {
             id: 2,
             icon: <FaLinkedin />,
             name: "LinkedIn",
-            href: "https://linkedin.com/in/kabilan09",
+            href: "https://www.linkedin.com/in/kabilan-fullstack",
         },
         {
             id: 3,
@@ -57,7 +57,7 @@ const Hero = () => {
             id: 4,
             icon: <FaGlobe />,
             name: "Website",
-            href: "https://www.kabilankaliyaperumal.in/",
+            href: "https://www.kabilan.in",
         },
     ];
 
