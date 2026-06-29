@@ -4,6 +4,21 @@ import "../styles/Projects.css";
 
 const projectsData = [
     {
+        id: 6,
+        title: "🎬⚡Tamil Movie Search & Download Platform 🎬",
+        desc: "A modern full-stack movie platform that lets users search movies, explore detailed information, and access available download options through a fast and responsive interface. It integrates multiple APIs to collect and display data in one place.",
+        techs: [
+            "React.js",
+            "Node.js",
+            "Express.js",
+            "REST API",
+            "API Integration",
+            "Data Aggregation"
+        ],
+        github: "https://github.com/Kabi09/Moviesda_Portal-.git",
+        demo: "https://moviesda-dude.vercel.app/",
+    }, ,
+    {
         id: 1,
         title: "🧠 Dude Quizz AI 📚",
         desc: "An AI-powered quiz platform focused on one-mark questions for Tamil medium students (Class 10, 11, 12). Features mathematical formula rendering using KaTeX.",

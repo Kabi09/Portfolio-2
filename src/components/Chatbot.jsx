@@ -118,7 +118,7 @@ An AI-powered quiz platform for Tamil medium students.
 
 🛒 **InstaShop E-Commerce**
 Secure shopping with Razorpay & Nodemailer integration.
-🔗 [Demo](https://insta-shop-umber.vercel.app/) | [Code](https://github.com/Kabi09/InstaShop-Ecommerce)
+🔗 [Demo](https://www.dudez.in/) | [Code](https://github.com/Kabi09/InstaShop-Ecommerce)
 
 🤖 **KabiGPT**
 Personalized Tanglish AI Telegram bot with a custom personality.
@@ -168,7 +168,7 @@ Feel free to explore any of these in my projects or reach out if you’d like mo
                 role: "ai", 
                 content: `You can find Kabilan on:
 - **GitHub**: https://github.com/Kabi09
-- **LinkedIn**: https://linkedin.com/in/kabilan09
+- **LinkedIn**: https://www.linkedin.com/in/kabilan-fullstack/
 - **Email**: mailto:kabilan.fullstack@gmail.com` 
             }]) 
         },
