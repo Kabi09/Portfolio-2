@@ -4,8 +4,8 @@ import { Link } from "react-scroll";
 import { FaGithub, FaLinkedin, FaEnvelope, FaGlobe } from "react-icons/fa";
 import "../styles/Hero.css";
 // import Resume from "../assets/Kabilan_Resume.pdf";
-import Resume from "../assets/Kabilan_K_Resume_Updated.pdf";
-
+// import Resume from "../assets/Kabilan_K_Resume_Updated.pdf";
+import Resume from "../assets/Kabilan_K_Resume_new.pdf"
 
 
 const Hero = () => {
